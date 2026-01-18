@@ -18,8 +18,8 @@
     "AutoVerifiedAttributes": [
      "email"
     ],
-    "EmailVerificationMessage": "The verification code to your new account is {####}",
-    "EmailVerificationSubject": "Verify your new account",
+    "EmailVerificationMessage": "Please use this code to confirm your account: {####}",
+    "EmailVerificationSubject": "Welcome to the AI-Powered Recipe Generator!",
     "Policies": {
      "PasswordPolicy": {
       "MinimumLength": 8,
@@ -55,8 +55,8 @@
     },
     "VerificationMessageTemplate": {
      "DefaultEmailOption": "CONFIRM_WITH_CODE",
-     "EmailMessage": "The verification code to your new account is {####}",
-     "EmailSubject": "Verify your new account",
+     "EmailMessage": "Please use this code to confirm your account: {####}",
+     "EmailSubject": "Welcome to the AI-Powered Recipe Generator!",
      "SmsMessage": "The verification code to your new account is {####}"
     }
    },
