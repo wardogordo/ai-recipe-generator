@@ -42,6 +42,7 @@
     "awsAppsyncAuthenticationType",
     "awsAppsyncRegion",
     "amplifyApiModelSchemaS3Uri",
+    "awsAppsyncApiKey",
     "awsAppsyncAdditionalAuthenticationTypes"
    ]
   }
@@ -157,7 +158,7 @@
    }
   },
   "awsAppsyncAuthenticationType": {
-   "Value": "AWS_IAM"
+   "Value": "API_KEY"
   },
   "awsAppsyncRegion": {
    "Value": {
@@ -201,8 +202,16 @@
     ]
    }
   },
+  "awsAppsyncApiKey": {
+   "Value": {
+    "Fn::GetAtt": [
+     "data7552DF31",
+     "Outputs.amplifyairecipegeneratorwardhsandboxe2c688b980dataamplifyDataGraphQLAPIDefaultApiKey17B8F2BEApiKey"
+    ]
+   }
+  },
   "awsAppsyncAdditionalAuthenticationTypes": {
-   "Value": "AMAZON_COGNITO_USER_POOLS"
+   "Value": "AMAZON_COGNITO_USER_POOLS,AWS_IAM"
   }
  },
  "Resources": {
@@ -235,7 +244,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/46b195e9036026eccdf80b03981e02d4582673d47181275c36cb1eb11571d17d.json"
+       "/2d6183db3cb8e32134dfb69bf448daf2ec9409906ed75dea695207250dad2236.json"
       ]
      ]
     }
@@ -256,24 +265,6 @@
       "Fn::GetAtt": [
        "auth179371D7",
        "Outputs.amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthUserPoolDCC978E7Ref"
-      ]
-     },
-     "referencetoamplifyairecipegeneratorwardhsandboxe2c688b980authNestedStackauthNestedStackResource276B8D4BOutputsamplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthauthenticatedUserRole162D60CCRef": {
-      "Fn::GetAtt": [
-       "auth179371D7",
-       "Outputs.amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthauthenticatedUserRole162D60CCRef"
-      ]
-     },
-     "referencetoamplifyairecipegeneratorwardhsandboxe2c688b980authNestedStackauthNestedStackResource276B8D4BOutputsamplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthunauthenticatedUserRoleD7951898Ref": {
-      "Fn::GetAtt": [
-       "auth179371D7",
-       "Outputs.amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthunauthenticatedUserRoleD7951898Ref"
-      ]
-     },
-     "referencetoamplifyairecipegeneratorwardhsandboxe2c688b980authNestedStackauthNestedStackResource276B8D4BOutputsamplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthIdentityPool1CCB1291Ref": {
-      "Fn::GetAtt": [
-       "auth179371D7",
-       "Outputs.amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthIdentityPool1CCB1291Ref"
       ]
      }
     },
@@ -303,7 +294,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/3d9987f2397ec50dc023970501ab4ff61d37fce926ee6d254a0cf2e3202c796b.json"
+       "/4800f8a1b5a08f9ec89c02f43d51e4ccbddb22f25699b4aaedd5ef1fd178fdcc.json"
       ]
      ]
     }
@@ -319,7 +310,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzI20TNUTCwv1k1OydbNyUzSqw4uSUzO1nFOy/MvLSkoLQGxwEK1Onn5Kal6WcX6ZUZGeobGeoaKWcWZmbpFpXklmbmpekEQGgCkHosLVAAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzI21TNUTCwv1k1OydbNyUzSqw4uSUzO1nFOy/MvLSkoLQGxwEK1Onn5Kal6WcX6ZUZGeobGeoaKWcWZmbpFpXklmbmpekEQGgCxhqwXVAAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-airecipegenerator-wardh-sandbox-e2c688b980/CDKMetadata/Default"

@@ -301,7 +301,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02LwQrCMBBEv6X3dKWpPyA9eRGpeJaYrLo13UCztUjIv0uRak8z82ZGg663UBVmiqV1z9LTFdIBo6A7ibFPZaZ4STbcmSRAOkccjiF41dz45xfTeEKWdfUne4csJO/lvM5t8LgTMfbRI0tWZHpIM5yHs+asWoxhHCxmxcEhdHHz0hqqGqqii0TlMLJQj9B+9QNriOmX1wAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02LwQrCMBBEv6X3dKUpfoD05EWk4llisurWdAPN1iIh/y5Fqj3NzJsZDbreQlWYKZbWPUtPV0gHjILuJMY+lZniJdlwZ5IA6RxxOIbgVXPjn19M4wlZ1tWf7B2ykLyX8zq3weNOxNhHjyxZkekhzXAezpqzajGGcbCYFQeH0MXNS2uoaqiKLhKVw8hCPUL71Q/sAAV01wAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-airecipegenerator-wardh-sandbox-e2c688b980/auth/CDKMetadata/Default"
@@ -589,16 +589,6 @@
   "amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthIdentityPool1CCB1291Ref": {
    "Value": {
     "Ref": "amplifyAuthIdentityPool3FDE84CC"
-   }
-  },
-  "amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthauthenticatedUserRole162D60CCRef": {
-   "Value": {
-    "Ref": "amplifyAuthauthenticatedUserRoleD8DA3689"
-   }
-  },
-  "amplifyairecipegeneratorwardhsandboxe2c688b980authamplifyAuthunauthenticatedUserRoleD7951898Ref": {
-   "Value": {
-    "Ref": "amplifyAuthunauthenticatedUserRole2B524D9E"
    }
   }
  }

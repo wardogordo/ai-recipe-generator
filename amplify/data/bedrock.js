@@ -31,6 +31,7 @@ export function request(ctx) {
     };
 }
 
+
 export function response(ctx) {
     // Parse the response from the Bedrock service
     const parsedBody = JSON.parse(ctx.result.body);
