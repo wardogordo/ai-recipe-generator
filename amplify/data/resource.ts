@@ -10,7 +10,7 @@ const schema = a.schema({
         .arguments({ingredients: a.string().array() })
         .returns(a.ref("BedrockResponse"))
         .authorization((allow) => [allow.authenticated()])
-        .handsler(
+        .handler(
             a.handler.custom({
                 entry: "./bedrock.js",
                 dataSource: "bedrockDS"
