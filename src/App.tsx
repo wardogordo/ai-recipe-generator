@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { Loader, Placeholder } from "@aws-amplify/ui-react";
+import { Loader, Placeholder, Authenticator } from "@aws-amplify/ui-react";
 import "./App.css";
 import { Amplify } from "aws-amplify";
 import type { Schema } from "../amplify/data/resource";
@@ -25,6 +25,7 @@ function App() {
                 ingredients: [formData.get("ingredients")?.toString() || ""],
             });
             if (!errors) {
+                console.log("AI Response Data:", data); // Check your F12 console for this!
                 setResult(data?.body || "No data returned");
             } else {
                 console.log(errors);
@@ -37,47 +38,54 @@ function App() {
     };
 
     return (
-        <div className="app-container">
-            <div className="header-container">
-                <h1 className="main-header">
-                    Meet Your Personal
-                    <br />
-                    <span className="highlight">Recipe AI</span>
-                </h1>
-                <p className="description">
-                    Simply type a few ingredients using the format ingredient1,
-                    ingredient2, etc., and Recipe AI will generate an all-new recipe on
-                    demand...
-                </p>
-            </div>
-            <form onSubmit={onSubmit} className="form-container">
-                <div className="search-container">
-                    <input
-                        type="text"
-                        className="wide-input"
-                        id="ingredients"
-                        name="ingredients"
-                        placeholder="Ingredient1, Ingredient2, Ingredient3,...etc"
-                    />
-                    <button type="submit" className="search-button">
-                        Generate
-                    </button>
-                </div>
-            </form>
-            <div className="result-container">
-                {loading ? (
-                    <div className="loader-container">
-                        <p>Loading...</p>
-                        <Loader size="large" />
-                        <Placeholder size="large" />
-                        <Placeholder size="large" />
-                        <Placeholder size="large" />
+        <Authenticator>
+            {({ signOut }) => (
+                <main className="app-container">
+                    <div className="header-container">
+                        <div className="sign-out-container">
+                            <button onClick={signOut} className="sign-out-button">Sign Out</button>
+                        </div>
+                        <h1 className="main-header">
+                            Meet Your Personal
+                            <br />
+                            <span className="highlight">Recipe AI</span>
+                        </h1>
+                        <p className="description">
+                            Simply type a few ingredients using the format ingredient1,
+                            ingredient2, etc., and Recipe AI will generate an all-new recipe on
+                            demand...
+                        </p>
                     </div>
-                ) : (
-                    result && <p className="result">{result}</p>
-                )}
-            </div>
-        </div>
+                    <form onSubmit={onSubmit} className="form-container">
+                        <div className="search-container">
+                            <input
+                                type="text"
+                                className="wide-input"
+                                id="ingredients"
+                                name="ingredients"
+                                placeholder="Ingredient1, Ingredient2, Ingredient3,...etc"
+                            />
+                            <button type="submit" className="search-button">
+                                Generate
+                            </button>
+                        </div>
+                    </form>
+                    <div className="result-container">
+                        {loading ? (
+                            <div className="loader-container">
+                                <p>Loading...</p>
+                                <Loader size="large" />
+                                <Placeholder size="large" />
+                                <Placeholder size="large" />
+                                <Placeholder size="large" />
+                            </div>
+                        ) : (
+                            result && <p className="result">{result}</p>
+                        )}
+                    </div>
+                </main>
+            )}
+        </Authenticator>
     );
 }
 
