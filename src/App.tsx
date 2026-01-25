@@ -22,7 +22,7 @@ function App() {
         try {
             const formData = new FormData(event.currentTarget);
             const { data, errors } = await amplifyClient.queries.askBedrock({
-                ingredients: [formData.get("ingredients")?.toString() || ""],
+                topic: formData.get("topic")?.toString() || "general",
             });
             if (!errors) {
                 console.log("AI Response Data:", data); // Check your F12 console for this!
@@ -48,12 +48,10 @@ function App() {
                         <h1 className="main-header">
                             Meet Your Personal
                             <br />
-                            <span className="highlight">Recipe AI</span>
+                            <span className="highlight">Dad Joke AI</span>
                         </h1>
                         <p className="description">
-                            Simply type a few ingredients using the format ingredient1,
-                            ingredient2, etc., and Recipe AI will generate an all-new recipe on
-                            demand...
+                            Enter a topic and get a groan-worthy dad joke on demand...
                         </p>
                     </div>
                     <form onSubmit={onSubmit} className="form-container">
@@ -61,12 +59,12 @@ function App() {
                             <input
                                 type="text"
                                 className="wide-input"
-                                id="ingredients"
-                                name="ingredients"
-                                placeholder="Ingredient1, Ingredient2, Ingredient3,...etc"
+                                id="topic"
+                                name="topic"
+                                placeholder="Enter a topic (e.g., cats, coffee, programming)"
                             />
                             <button type="submit" className="search-button">
-                                Generate
+                                Get Joke
                             </button>
                         </div>
                     </form>

@@ -1,8 +1,8 @@
 export function request(ctx) {
-    const { ingredients = [] } = ctx.args;
+    const { topic = "general" } = ctx.args;
 
-    // Construct the prompt with the provided ingredients
-    const prompt = `Suggest a recipe idea using these ingredients: ${ingredients.join(", ")}.`;
+    // Construct the prompt for generating a dad joke
+    const prompt = `Tell me a dad joke about ${topic}. Keep it family-friendly and groan-worthy.`;
 
     // Return the request configuration
     return {
