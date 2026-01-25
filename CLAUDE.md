@@ -47,3 +47,6 @@ npx ampx sandbox  # Start Amplify sandbox for local development
 - `amplify_outputs.json` - Generated Amplify config (do not edit manually)
 - `amplify/backend.ts` - Bedrock IAM permissions configured here
 - `amplify/data/bedrock.js` - Modify prompt template here
+
+## Known Issues
+- **Claude Sonnet 4.5 requires inference profiles**: AWS Bedrock won't allow direct model invocation for Claude Sonnet 4.5. Use Claude 3 Sonnet (`anthropic.claude-3-sonnet-20240229-v1:0`) instead, or configure an inference profile for Sonnet 4.5.
