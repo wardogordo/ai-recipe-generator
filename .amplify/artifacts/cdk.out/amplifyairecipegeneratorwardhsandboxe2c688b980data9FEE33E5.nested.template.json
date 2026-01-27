@@ -53,7 +53,7 @@
      ]
     },
     "DefinitionS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/261664a966351c498b47f51816916671eaa353e790ed3341ecc34873d6c97891.graphql"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7d98c1d3c73597d5daeceb97e8b417b933920f3328f2d425c5bc3915c9e17d0f.graphql"
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -71,7 +71,7 @@
       "ApiId"
      ]
     },
-    "Expires": 1771518000
+    "Expires": 1772071270
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -271,7 +271,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "c6f22dd67f7cc9a181167150acfc3c60d9bbda91121e422af1e2195d9a2ee754.zip"
+     "b6e0ec66c1d10a293c6a9c7d18d08d5ac6731dee9a3a4db9927801fe9a946221.zip"
     ],
     "SourceMarkers": [
      {}
@@ -339,7 +339,7 @@
       {
        "Action": "bedrock:InvokeModel",
        "Effect": "Allow",
-       "Resource": "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0"
+       "Resource": "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
       }
      ],
      "Version": "2012-10-17"
@@ -872,7 +872,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "d90de405ade93dd045f08d479ca62f26945dbdc3cedc23bb99d9b15819a7750e.zip"
+     "7f0d00c3172c2f737699b79e3de2593daf8f6eb908ea5fcf1dabe32b742c51c0.zip"
     ],
     "SourceMarkers": [
      {}
@@ -900,7 +900,7 @@
      ]
     },
     "CodeS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ccf5596674192ed2e6fa4b73ca06a014b87520675cb2c77b72378610b190da44.js"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a644c08fb644611f83e0a5090ae4c3b83196e574144704f90d021da6dc864138.js"
     },
     "DataSourceName": "bedrockDS",
     "Name": "Fn_Query_askBedrock_1",

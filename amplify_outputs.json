@@ -68,12 +68,11 @@
           },
           "isRequired": false,
           "arguments": {
-            "ingredients": {
-              "name": "ingredients",
-              "isArray": true,
+            "topic": {
+              "name": "topic",
+              "isArray": false,
               "type": "String",
-              "isRequired": false,
-              "isArrayNullable": true
+              "isRequired": false
             }
           }
         }
