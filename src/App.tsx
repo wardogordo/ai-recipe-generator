@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { Loader, Placeholder, Authenticator } from "@aws-amplify/ui-react";
+import { Authenticator } from "@aws-amplify/ui-react";
 import "./App.css";
 import { Amplify } from "aws-amplify";
 import type { Schema } from "../amplify/data/resource";
@@ -71,11 +71,8 @@ function App() {
                     <div className="result-container">
                         {loading ? (
                             <div className="loader-container">
-                                <p>Loading...</p>
-                                <Loader size="large" />
-                                <Placeholder size="large" />
-                                <Placeholder size="large" />
-                                <Placeholder size="large" />
+                                <span className="claude-spinner"></span>
+                                <span>Generating dad joke...</span>
                             </div>
                         ) : (
                             result && <p className="result">{result}</p>

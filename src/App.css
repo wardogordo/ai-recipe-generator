@@ -90,10 +90,50 @@
 
 .loader-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
-  color: #646cff;
+  gap: 0.5rem;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 1rem;
+  color: #f5a623;
+  padding: 0.5rem 0;
+}
+
+.claude-spinner {
+  display: inline-block;
+  width: 1ch;
+  animation: spin-braille 0.8s steps(10) infinite;
+}
+
+@keyframes spin-braille {
+  0% { content: "⠋"; }
+  10% { content: "⠙"; }
+  20% { content: "⠹"; }
+  30% { content: "⠸"; }
+  40% { content: "⠼"; }
+  50% { content: "⠴"; }
+  60% { content: "⠦"; }
+  70% { content: "⠧"; }
+  80% { content: "⠇"; }
+  90% { content: "⠏"; }
+}
+
+.claude-spinner::before {
+  content: "⠋";
+  animation: spin-braille-content 0.8s steps(10) infinite;
+}
+
+@keyframes spin-braille-content {
+  0% { content: "⠋"; }
+  10% { content: "⠙"; }
+  20% { content: "⠹"; }
+  30% { content: "⠸"; }
+  40% { content: "⠼"; }
+  50% { content: "⠴"; }
+  60% { content: "⠦"; }
+  70% { content: "⠧"; }
+  80% { content: "⠇"; }
+  90% { content: "⠏"; }
 }
 
 .result {
