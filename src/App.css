@@ -1,8 +1,18 @@
-.app-container {
+body {
+  background-image: url('/Firefly_Gemini Flash.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 
+.app-container {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  min-height: 100vh;
 }
 
 .header-container {
