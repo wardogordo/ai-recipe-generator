@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Amplify
+.amplify/artifacts/
+amplify_outputs.json
+.amplify/tsconfig.tsbuildinfo
