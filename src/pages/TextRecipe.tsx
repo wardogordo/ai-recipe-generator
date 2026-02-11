@@ -1,6 +1,5 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import type { Schema } from "../../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
@@ -63,11 +62,8 @@ export default function TextRecipe() {
             <div className="result-container">
                 {loading ? (
                     <div className="loader-container">
-                        <p>Loading...</p>
-                        <Loader size="large" />
-                        <Placeholder size="large" />
-                        <Placeholder size="large" />
-                        <Placeholder size="large" />
+                        <span className="claude-spinner"></span>
+                        <span>Generating recipe...</span>
                     </div>
                 ) : (
                     result && <p className="result">{result}</p>
