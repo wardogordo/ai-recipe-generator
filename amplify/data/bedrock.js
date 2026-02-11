@@ -6,7 +6,8 @@ export function request(ctx) {
 
     // Return the request configuration
     return {
-        resourcePath: `/model/anthropic.claude-sonnet-4-5-20250929-v1:0/invoke`,
+        resourcePath: `/model/anthropic.claude-3-sonnet-20240229-v1:0/invoke`,
+        // resourcePath: `/model/anthropic.claude-sonnet-4-5-20250929-v1:0/invoke`,
         method: "POST",
         params: {
             headers: {
@@ -33,12 +34,12 @@ export function request(ctx) {
 
 
 export function response(ctx) {
-    // Parse the response from the Bedrock service
     const parsedBody = JSON.parse(ctx.result.body);
-    // Extract the text content from the response
-    const res = {
-        body: parsedBody.content[0].text,
+    // Handle error responses from Bedrock
+    if (parsedBody.message) {
+        return { body: null, error: parsedBody.message };
+    }
+    return {
+        body: parsedBody.content?.[0]?.text ?? "No response from AI",
     };
-    // Return the extracted response
-    return res;
 }
